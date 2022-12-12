@@ -56,12 +56,12 @@ while True:
 
         print(f"Please, enter an available player number\nTry it again")
 
-    if player_one.pos() >= (280, 130):
+    if player_one.pos() >= (278, 130):
 
         print("Player one is the winner! :)")
         break
 
-    if player_two.pos() >= (280, -70):
+    if player_two.pos() >= (278, -70):
 
         print("Player two is the winner! :)")
         break
