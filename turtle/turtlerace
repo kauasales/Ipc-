@@ -1,0 +1,69 @@
+import turtle
+import random
+
+player_one = turtle.Turtle()
+player_two = turtle.Turtle()
+
+player_one.penup()
+player_one.color('orange')
+player_one.shape('turtle')
+player_one.goto(300, 100)
+player_one.pendown()
+player_one.pencolor('green')
+player_one.circle(30)
+player_one.penup()
+player_one.goto(-300, 130)
+
+player_two.penup()
+player_two.color('black')
+player_two.shape('turtle')
+player_two.goto(300, -100)
+player_two.pendown()
+player_two.pencolor('blue')
+player_two.circle(30)
+player_two.penup()
+player_two.goto(-300, -70)
+
+while True:
+
+    player = input("Press [1] and enter for player one\nPress [2] and enter for player two\n")
+
+    if player == '1':
+
+        dice = random.randrange(1, 7)
+        steps = dice * 20
+
+        print(f"Dice roll result: {dice}")
+        print(f"Steps number: {steps}")
+        print()
+
+        player_one.pendown()
+        player_one.forward(steps)
+
+    if player == '2':
+
+        dice = random.randrange(1, 7)
+        steps = dice * 20
+
+        print(f"Dice roll result: {dice}")
+        print(f"Steps number: {steps}")
+        print()
+
+        player_two.pendown()
+        player_two.forward(steps)
+
+    if player != '1' and player != '2':
+
+        print(f"Please, enter an available player number\nTry it again")
+
+    if player_one.pos() >= (280, 130):
+
+        print("Player one is the winner! :)")
+        break
+
+    if player_two.pos() >= (280, -70):
+
+        print("Player two is the winner! :)")
+        break
+
+turtle.done()
